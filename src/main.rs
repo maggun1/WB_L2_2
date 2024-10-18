@@ -76,6 +76,9 @@ mod tests {
 
 fn main() {
     let str = String::from(r"qwe\\5");
-    println!("{} => {}", str, unpack_string(&str).unwrap());
+    match unpack_string(&str) {
+        Ok(s) => println!("{} => {}", str, s),
+        Err(e) => println!("Error: {}", e),
+    }
 }
 
